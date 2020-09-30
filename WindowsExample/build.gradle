@@ -1,0 +1,23 @@
+plugins {
+    id 'org.jetbrains.kotlin.multiplatform' version '1.4.10'
+}
+repositories {
+    mavenCentral()
+    maven { url "https://kotlin.bintray.com/kotlinx" }
+}
+kotlin {
+    mingwX64("mingw") {
+        binaries {
+            executable {
+               entryPoint = 'sample.main'
+                runTask?.args('')
+            }
+        }
+    }
+    sourceSets {
+        mingwMain {
+        }
+        mingwTest {
+        }
+    }
+}
