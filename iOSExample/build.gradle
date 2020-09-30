@@ -1,0 +1,33 @@
+plugins {
+    id 'org.jetbrains.kotlin.multiplatform' version '1.3.72'
+}
+repositories {
+    mavenCentral()
+}
+group 'com.example'
+version '0.0.1'
+
+apply plugin: 'maven-publish'
+
+kotlin {
+    // This is for iPhone simulator
+    // Switch here to iosArm64 (or iosArm32) to build library for iPhone device
+    iosX64("ios") {
+        binaries {
+            framework()
+        }
+    }
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation kotlin('stdlib-common')
+            }
+        }
+        iosMain {
+        }
+    }
+}
+
+configurations {
+    compileClasspath
+}

@@ -1,0 +1,4 @@
+rootProject.name = 'iOSExample'
+
+
+enableFeaturePreview('GRADLE_METADATA')
