@@ -1,0 +1,46 @@
+plugins {
+    id 'org.jetbrains.kotlin.multiplatform' version '1.4.10'
+}
+repositories {
+    mavenCentral()
+    maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
+}
+kotlin {
+    def hostOS = System.getProperty("os.name")
+    mingwX64("mingw") {
+        binaries {
+            executable {
+                entryPoint = 'com.thomaskuenneth.helloconsole.main'
+                runTask?.args(hostOS)
+            }
+        }
+    }
+    macosX64("macos") {
+        binaries {
+            executable {
+                entryPoint = 'com.thomaskuenneth.helloconsole.main'
+                runTask?.args(hostOS)
+            }
+        }
+    }
+    linuxX64("linux") {
+        binaries {
+            executable {
+                entryPoint = 'com.thomaskuenneth.helloconsole.main'
+                runTask?.args(hostOS)
+            }
+        }
+    }
+    sourceSets {
+        mingwMain {
+        }
+        mingwTest {
+        }
+        commonMain {
+        }
+        commonTest {
+        }
+        macosMain {
+        }
+    }
+}
