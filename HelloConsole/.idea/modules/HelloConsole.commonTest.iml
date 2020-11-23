@@ -5,7 +5,7 @@
       <configuration version="3" platform="Common (experimental) " allPlatforms="JS []/JVM [1.6]/Native []/Native [general]" useProjectSettings="false" isTestModule="true" externalProjectId="HelloConsole">
         <newMppModelJpsModuleKind>SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <externalSystemTestTasks>
-          <externalSystemTestTask>linuxTest|HelloConsole:linuxTest|linux</externalSystemTestTask>
+          <externalSystemTestTask>macosTest|HelloConsole:macosTest|macos</externalSystemTestTask>
         </externalSystemTestTasks>
         <compilerSettings />
         <compilerArguments>
